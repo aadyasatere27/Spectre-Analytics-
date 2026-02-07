@@ -1,174 +1,25 @@
 Spectre Analytics
 
-Financial Energy Monitor
-Operational Intelligence for Energy Efficiency
+Spectre Analytics is a real-time energy monitoring and anomaly detection dashboard designed to identify hidden power waste and convert it into clear operational and financial insight. The project was built during a 24-hour hackathon (Echelon 2.0) with the aim of creating a working system that highlights inefficiencies in energy usage that are usually overlooked.
 
-Spectre Analytics is a real-time energy monitoring platform built to bridge the gap between operations and finance. Instead of stopping at raw power consumption metrics, the system detects hidden inefficiencies, explains why they occur, and translates them directly into financial loss.
+The core idea behind Spectre Analytics is that energy loss is rarely caused by dramatic failures. In most real-world environments, waste appears in subtle forms such as:
+• equipment running outside scheduled hours
+• machines idling without producing output
+• motors drawing more power than their normal baseline
+• systems consuming energy without triggering alarms
 
-This project was built during our first hackathon as a working prototype demonstrating how energy data can be turned into actionable operational and financial insight.
+Individually, these issues seem minor, but over time they result in significant financial loss and unnecessary carbon impact. Spectre Analytics treats energy consumption as a live, evolving system rather than a static report.
 
-Problem Statement
+Spectre Analytics continuously monitors energy usage using simulated hourly telemetry data. It compares expected consumption against actual usage in real time, detects abnormal behavior, and flags energy waste automatically. Detected issues are classified into two categories:
+• critical anomalies such as overloads, surges, and thermal risks
+• invisible inefficiencies such as phantom loads, idle equipment, and off-schedule operation
 
-Most energy dashboards answer how much power is being used, but fail to answer:
+Each detected event is logged with a timestamp, affected asset, severity, and estimated energy waste. Excess consumption is translated into monetary loss, allowing technical data to be understood in business terms.
 
-Is this usage expected?
+All data used in this project is mock data. The dataset is designed to realistically simulate hourly energy telemetry, operational load patterns, and anomaly behavior commonly observed in industrial and commercial systems. This allows realistic testing of anomaly detection, incident tracking, and cost analysis without requiring live infrastructure.
 
-What part of it is waste?
+The dashboard is divided into multiple views, each serving a different purpose. The overview view presents system health, total energy waste, efficiency status, live load behavior, and capacity utilization. The savings view focuses on financial impact, including money lost, burn rate, projected annual savings, and high-impact assets. The incidents view provides a detailed log of detected anomalies, including classification, affected assets, waste magnitude, and recommended actions.
 
-Why is the waste happening?
+The design philosophy behind Spectre Analytics emphasizes clarity and action. Instead of overwhelming users with raw technical data, the system prioritizes visibility, classification, and decision-making. The interface is intentionally designed to feel like an operations console, enabling engineers and decision-makers to quickly understand what is happening, why it matters, and what needs attention.
 
-How much money is being lost because of it?
-
-As a result, inefficiencies remain invisible, especially when production continues normally and no alarms are triggered.
-
-Spectre Analytics was built to surface these silent losses and present them in a way that both engineers and decision-makers can act on.
-
-Core Concept
-
-Spectre treats energy as a financial signal, not just a utility metric.
-
-It works by:
-
-Predicting what energy usage should look like
-
-Comparing it with real-time consumption
-
-Identifying deviations (anomalies)
-
-Classifying the root cause
-
-Converting excess usage into monetary loss
-
-Key Features
-1. Real-Time Anomaly Detection
-
-Continuously compares expected load vs actual load
-
-Detects abnormal behavior such as idle load, phantom drain, short cycling, and electrical faults
-
-Works even when production is running normally
-
-2. Financial Translation Layer
-
-Converts wasted energy directly into:
-
-Cash burn rate (per hour)
-
-Daily loss
-
-Annualized potential savings
-
-Removes ambiguity around energy units by framing inefficiency in currency
-
-3. Root Cause Classification
-
-Each anomaly is classified into meaningful categories such as:
-
-Phantom Drain
-
-Idle Load
-
-Thermal Overload
-
-Harmonic Distortion
-
-Steam Trap Leak
-
-Surge Events
-
-Sensor Drift Errors
-
-This allows teams to prioritize fixes based on impact, not guesswork.
-
-Platform Overview
-Overview Dashboard
-
-Designed for facility managers and operators.
-
-Total Waste (kW): Excess energy beyond predicted baseline
-
-System Efficiency (%): Live operational health score
-
-Active Anomalies: Unresolved issues requiring attention
-
-Carbon Footprint (kg/h): Real-time Scope 2 emissions
-
-Includes:
-
-Hourly telemetry graph showing baseline vs actual load
-
-Grid capacity gauge to avoid peak demand charges
-
-Savings Dashboard
-
-Designed for finance teams and leadership.
-
-Cash burn rate (per hour)
-
-Energy cost lost in the last 24 hours
-
-Annualized potential savings
-
-Spend ROI and efficiency rating
-
-Visualizes:
-
-Cost velocity over time
-
-Waste categorized by root cause
-
-High-impact assets ranked by financial loss
-
-Incidents Log
-
-Acts as a system “black box” for operational intelligence.
-
-Logs every detected anomaly with:
-
-Timestamp
-
-Asset ID
-
-Classification
-
-Technical explanation
-
-Energy waste (kW)
-
-Separates incidents into:
-
-Critical issues (safety and equipment risk)
-
-Invisible waste (silent financial loss)
-
-Each incident includes suggested remediation steps.
-
-Technical Overview
-
-Frontend:
-
-HTML
-
-Tailwind CSS
-
-Chart.js
-
-Lucide Icons
-
-Architecture:
-
-Real-time simulated telemetry engine
-
-Predictive baseline modeling
-
-Event-driven anomaly generation
-
-Financial impact calculation layer
-
-Design Philosophy:
-
-Dark, high-contrast UI for control-room readability
-
-Minimal cognitive load
-
-Financial clarity over raw metrics
+This project was built during Echelon 2.0, a 24-hour hackathon, under strict time constraints that required rapid prioritization, clear thinking, and effective collaboration.
